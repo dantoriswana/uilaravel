@@ -21,6 +21,9 @@ Route::middleware('auth:api')->group(function () {
     Route::get('isi-bukus/{id}', [IsiBukuController::class, 'show']);
     Route::put('isi-bukus/{id}', [IsiBukuController::class, 'update']);
     Route::delete('isi-bukus/{id}', [IsiBukuController::class, 'destroy']);
+    Route::post('books/{id}/rating', [BookController::class, 'addRating']);
+    Route::post('books/{id}/disukai', [BookController::class, 'addLike']);
+    Route::delete('books/{id}/disukai', [BookController::class, 'removeLike']);
 });
 
 

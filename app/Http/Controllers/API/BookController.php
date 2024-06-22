@@ -5,14 +5,22 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\UserRating;
+use App\Models\UserLike; // Pastikan model UserLike diimpor
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
     // Metode untuk mengambil semua data buku
     public function index()
     {
-        $books = Book::all(); // Mengambil semua data buku dari database
+        $books = Book::all(['id', 'judul_buku', 'pengarang', 'tahun_terbit', 'jumlah_halaman', 'penerbit', 'kategori', 'img_url', 'created_at', 'updated_at', 'rating', 'likes_count']);
 
+        // Update likes_count untuk setiap buku
+        foreach ($books as $book) {
+            $book->updateLikesCount();
+        }
+    
         return response()->json($books, 200);
     }
 
@@ -102,5 +110,52 @@ class BookController extends Controller
         $message = "Buku berhasil dihapus.";
 
         return response()->json(['message' => $message], 200);
+    }
+
+    // Metode untuk menambahkan suka
+    public function addLike(Request $request, $id)
+    {
+        $user = $request->user();
+
+        // Check if the book is already liked by the user
+        $like = UserLike::where('user_id', $user->id)->where('book_id', $id)->first();
+
+        if ($like) {
+            return response()->json(['message' => 'Buku sudah disukai'], 200);
+        }
+
+        // Add to likes
+        UserLike::create([
+            'user_id' => $user->id,
+            'book_id' => $id,
+        ]);
+
+        // Update likes count
+        $book = Book::findOrFail($id);
+        $book->updateLikesCount();
+
+        return response()->json(['message' => 'Buku ditambahkan ke suka'], 201);
+    }
+
+    // Metode untuk menghapus suka
+    public function removeLike(Request $request, $id)
+    {
+        $user = $request->user();
+
+        // Check if the book is liked by the user
+        $like = UserLike::where('user_id', $user->id)->where('book_id', $id)->first();
+
+        if (!$like) {
+            return response()->json(['message' => 'Buku tidak disukai'], 404);
+        }
+
+        // Remove from likes
+        $like->delete();
+
+        // Update likes count
+        $book = Book::findOrFail($id);
+        $book->updateLikesCount();
+
+        return response()->json(['message' => 'Buku dihapus dari suka'], 200);
     }
 }
