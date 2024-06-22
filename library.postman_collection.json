@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "7b39146a-0c17-4e57-a330-0f53c9d4e283",
+		"name": "library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33556757",
+		"_collection_link": "https://galactic-flare-569432.postman.co/workspace/New-Team-Workspace~f9793b8b-ed7c-4157-ba15-e811a73e8e69/collection/33556757-7b39146a-0c17-4e57-a330-0f53c9d4e283?action=share&source=collection_link&creator=33556757"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2MDMyMTMwLCJleHAiOjE3MTYwMzU3MzAsIm5iZiI6MTcxNjAzMjEzMCwianRpIjoiZDBDck5ZdkNpQ2FhbTZPMiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.my9AummYOXScRc6CDqi4wB0AKLckgSAfPIjWWX-XD48eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2MDMyMTMwLCJleHAiOjE3MTYwMzU3MzAsIm5iZiI6MTcxNjAzMjEzMCwianRpIjoiZDBDck5ZdkNpQ2FhbTZPMiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.my9AummYOXScRc6CDqi4wB0AKLckgSAfPIjWWX-XD48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "cucu",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "cucuhanapi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Cucu1212",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2MDMyMTMwLCJleHAiOjE3MTYwMzU3MzAsIm5iZiI6MTcxNjAzMjEzMCwianRpIjoiZDBDck5ZdkNpQ2FhbTZPMiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.my9AummYOXScRc6CDqi4wB0AKLckgSAfPIjWWX-XD48eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE2MDMyMTMwLCJleHAiOjE3MTYwMzU3MzAsIm5iZiI6MTcxNjAzMjEzMCwianRpIjoiZDBDck5ZdkNpQ2FhbTZPMiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.my9AummYOXScRc6CDqi4wB0AKLckgSAfPIjWWX-XD48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Admin@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE5MDQ3MzkxLCJleHAiOjE3MTkwNTA5OTEsIm5iZiI6MTcxOTA0NzM5MSwianRpIjoiVUdoTENVV0tuQjFmVE9zdSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.9MjSVyWx31mXDsAWF_L0mc61z-CA61j7X29kPu2Qkao",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "judul_buku",
+							"value": "Indonesian Horror Story",
+							"type": "text"
+						},
+						{
+							"key": "pengarang",
+							"value": "Rosellagee",
+							"type": "text"
+						},
+						{
+							"key": "tahun_terbit",
+							"value": "2023",
+							"type": "text"
+						},
+						{
+							"key": "jumlah_halaman",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "penerbit",
+							"value": "wattpad",
+							"type": "text"
+						},
+						{
+							"key": "kategori",
+							"value": "horor",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "disukai",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE5MDYyMDExLCJleHAiOjE3MTkwNjU2MTEsIm5iZiI6MTcxOTA2MjAxMSwianRpIjoiY3d2Y2RuUTU2NEtkSkw4NSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.S87360HUZ-GRirFN_QI0Hk_X_WNZ8wICTOvj8sCt53g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE5MDQyNzU4LCJleHAiOjE3MTkwNDYzNTgsIm5iZiI6MTcxOTA0Mjc1OCwianRpIjoiN0xLZDJnTmdWYUMxV1o3dCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jz01VkimZR2NoksKnnY4WNr1FWB807rbDRKdLm9FEBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE5MDQyNzU4LCJleHAiOjE3MTkwNDYzNTgsIm5iZiI6MTcxOTA0Mjc1OCwianRpIjoiN0xLZDJnTmdWYUMxV1o3dCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jz01VkimZR2NoksKnnY4WNr1FWB807rbDRKdLm9FEBI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"id\": 2,\r\n        \"judul_buku\": \"laskar pelangi\",\r\n        \"pengarang\": \"F. Scott Fitzgerald\",\r\n        \"tahun_terbit\": 1925,\r\n        \"jumlah_halaman\": 180,\r\n        \"penerbit\": \"Scribner\",\r\n        \"kategori\": \"Novel\",\r\n        \"created_at\": \"2024-06-13T13:59:32.000000Z\",\r\n        \"updated_at\": \"2024-06-13T13:59:32.000000Z\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "isibukus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE5MDUyNDE1LCJleHAiOjE3MTkwNTYwMTUsIm5iZiI6MTcxOTA1MjQxNSwianRpIjoiVUdPOE5WdWtMZ0hOS1RzaSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.87Zh9SfYDKnEpAhY6pWzN3mMlnSwOLrN47P6M5iqTdA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"book_id\": 14,\r\n    \"content\": \"Yuna merapikan rambutnya yang terkena angin, kampus baru nya sudah ada didepan mata. Dan hari ini dia resmi jadi mahasiswa setelah masa-masa ospek beberapa hari yang lalu dilaluinya.&nbsp; Ah, aku harus mengecek lagi kelas pertamaku. yuna langsung mengambil ponsel dikantongnya, membuka dokumen jadwal kuliahnya. D-507, Astaga...lantai 5 ternyata. Dengan buru-buru yuna memasukan kembali ponselnya ke kantong dan bergegas menuju kelasnya. Yuna menarik napas lega ketika sudah sampai didepan kelas pertamanya. Langsung saja dia masuk dan mencari tempat duduk. Dilihatnya sekeliling, kelas hampir penuh. Yuna masih mencari-cari seseorang yang mungkin dikenalnya agar bisa duduk dengan nyaman. Kegaduhan sesaat sunyi saat dosen memasuki kelas. Yuna melirik teman-teman disampingnya, tak asing memang tapi dia tidak mengenalnya. Dan kelas pertama berlalu dengan cepat.&nbsp;\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/isi-bukus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"isi-bukus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rating",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE5MDU3NzgyLCJleHAiOjE3MTkwNjEzODIsIm5iZiI6MTcxOTA1Nzc4MiwianRpIjoiWXpNRHpuMVp6YTlDUWtzeSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.goBKqgaNEVckGXIClGWGPB2hxhCTtB9A3ZNsWg8STTQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 2,\r\n    \"rating\": 5\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/5/rating",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"5",
+						"rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favorite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzE5MDYwMTI5LCJleHAiOjE3MTkwNjM3MjksIm5iZiI6MTcxOTA2MDEyOSwianRpIjoiaHBlNTRFaktGYzYybHhzUSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.i3GMGedygxQLg0f3h27YvhCeZQcMD0RTEQ5wPK44GVM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/4/disukai",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"4",
+						"disukai"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/disukai",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"disukai"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
