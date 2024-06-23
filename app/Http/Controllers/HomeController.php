@@ -2,33 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        $users = User::count();
+        // Jumlah total pengguna
+        $usersCount = User::count();
 
+        // Jumlah total buku
+        $booksCount = Book::count();
+
+        // Buku dengan like count terbanyak
+        $mostLikedBook = Book::withCount('userLikes')
+            ->orderBy('user_likes_count', 'desc')
+            ->first();
+
+        // Total likes untuk buku favorit
+        $mostLikedBookLikes = $mostLikedBook ? $mostLikedBook->user_likes_count : 0;
+
+        // Data untuk widget
         $widget = [
-            'users' => $users,
-            //...
+            'users' => $usersCount,
+            'books' => $booksCount,
+            'mostLikedBook' => $mostLikedBook,
+            'mostLikedBookLikes' => $mostLikedBookLikes,
         ];
 
         return view('home', compact('widget'));
