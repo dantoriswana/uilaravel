@@ -14,25 +14,33 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        $this->validate($request, [
+        // Validasi input pengguna
+        $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        try {
+            // Buat pengguna baru
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-        $token = JWTAuth::fromUser($user);
+            // Buat token JWT untuk pengguna
+            $token = JWTAuth::fromUser($user);
 
-        return response()->json([
-            'message' => 'User registered successfully',
-            'user' => $user,
-            'token' => $token,
-        ], 201);
+            // Kembalikan respons JSON
+            return response()->json([
+                'message' => 'User registered successfully',
+                'user' => $user,
+                'token' => $token,
+            ], 201);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Registration failed, please try again'], 500);
+        }
     }
 
     public function login(Request $request)
@@ -50,7 +58,7 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Login successful',
             'token' => $token,
-        ]);
+        ], 200);
     }
 
     public function logout(Request $request)
@@ -61,7 +69,7 @@ class AuthController extends Controller
 
         try {
             JWTAuth::invalidate($request->token);
-            return response()->json(['success' => 'Logged out successfully']);
+            return response()->json(['success' => 'Logged out successfully'], 200);
         } catch (JWTException $e) {
             return response()->json(['error' => 'Failed to logout, please try again'], 500);
         }
@@ -69,6 +77,6 @@ class AuthController extends Controller
 
     public function me()
     {
-        return response()->json(Auth::user());
+        return response()->json(Auth::user(), 200);
     }
 }

@@ -2,14 +2,18 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BookController;
+use App\Http\Controllers\API\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\IsiBukuController;
 
 // Auth routes
-Route::post('register', [AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login']);
-Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:api');
+// Route::post('register', [RegisterController::class, 'register']);
 
+Route::post('/register', App\Http\Controllers\api\RegisterController::class)->name('register');
+Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');
+
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:api');
+Route::get('/user', [AuthController::class, 'me'])->middleware('auth:api');
 // Protected routes (requires JWT authentication)
 Route::middleware('auth:api')->group(function () {
     Route::post('books', [BookController::class, 'store']); // Menyimpan buku baru
