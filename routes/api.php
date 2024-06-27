@@ -18,6 +18,7 @@ Route::get('/user', [AuthController::class, 'me'])->middleware('auth:api');
 Route::middleware('auth:api')->group(function () {
     Route::post('books', [BookController::class, 'store']); // Menyimpan buku baru
     Route::get('books', [BookController::class, 'index']); // Mengambil semua buku
+    Route::get('books/{id}', [BookController::class, 'show']);
     Route::put('books/{id}', [BookController::class, 'update']); // Update buku berdasarkan ID
     Route::delete('books/{id}', [BookController::class, 'destroy']); // Hapus buku berdasarkan ID
     Route::post('isi-bukus', [IsiBukuController::class, 'store']);

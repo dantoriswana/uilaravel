@@ -39,7 +39,7 @@ class IsiBukuController extends Controller
     // Metode untuk menampilkan satu isi buku berdasarkan ID
     public function show($id)
     {
-        $isiBuku = IsiBuku::find($id);
+        $isiBuku = IsiBuku::Where('book_id',$id)->get() ;
 
         if (!$isiBuku) {
             return response()->json(['message' => 'Isi buku tidak ditemukan'], 404);
