@@ -23,6 +23,16 @@ class BookController extends Controller
     
         return response()->json($books, 200);
     }
+    public function show($id)
+    {
+        $book = Book::find($id);
+
+        if (!$book) {
+            return response()->json(['error' => 'Book not found.'], 404);
+        }
+
+        return response()->json($book);
+    }
 
     // Metode untuk menyimpan buku baru
     public function store(Request $request)
